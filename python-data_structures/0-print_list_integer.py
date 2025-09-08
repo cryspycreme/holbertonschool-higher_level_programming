@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 def print_list_integer(my_list=[]):
     for int in range(len(my_list)):
-        print("{}".format(my_list[int]))
+        print("{:d}".format(my_list[int]))
