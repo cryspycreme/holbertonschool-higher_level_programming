@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
-#return max integer in the list
-#if list is empty, return None
+# return max integer in the list
+# if list is empty, return None
 
 def max_integer(my_list=[]):
     sort_list = list(sorted(my_list))
