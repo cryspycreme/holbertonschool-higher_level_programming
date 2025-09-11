@@ -14,7 +14,8 @@ def best_score(a_dictionary):
     if not a_dictionary:
         return None
     # sort dictionary by value, in ascending order
-    sort_dict = dict(sorted(a_dictionary.items(), key=lambda x: x[1],
-                            reverse=True))
-    top_score = next(iter(sort_dict))
-    return top_score
+    top_score = max(a_dictionary.values())
+    for name, score in a_dictionary.items():
+        if score == top_score:
+            champion = name
+    return champion
