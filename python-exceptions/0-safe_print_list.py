@@ -13,10 +13,12 @@ function should print the result & return the number of items printed
 
 
 def safe_print_list(my_list=[], x=0):
+    count = 0
     try:
         for i in range(x):
             print("{}".format(my_list[i]), end="")
+            count += 1
     except IndexError:
-        i -= 1
+        pass
     print("")
-    return i + 1
+    return count
