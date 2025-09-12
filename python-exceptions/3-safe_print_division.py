@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 
 # Write a function that divides 2 integers and prints the result.
 # The result of the division should print on the finally: section preceded
