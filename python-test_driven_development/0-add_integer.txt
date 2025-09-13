@@ -1,0 +1,30 @@
+The ``add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+First step: import ``add_integer`` from the ``0-add_integer.py`` file:
+    >>> add = __import__('0-add_integer').add_integer
+
+Tests:
+    >>> add(1, 2)
+    3
+
+    >>> add(100, -2)
+    98
+
+    >>> add(3.4, 5.2)
+    8.6
+
+    Test: a is not an int
+    >>> add("hello", 5)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
+
+    Test: b is not an int
+    >>> add(5, "hello")
+    Traceback (most recent call last):
+    ...
+    TypeError: b must be an integer
