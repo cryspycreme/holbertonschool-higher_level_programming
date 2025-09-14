@@ -6,7 +6,14 @@
 # div != 0 - ZeroDivision Error
 # output should be {:2d}
 
+"""
+This is a function that divides each row of a matrix
+"""
+
 def matrix_divided(matrix, div):
+    """
+    Divide each value in the matrix
+    """
     matrix_1 = []
     if type(div) is not int and type(div) is not float:
         raise TypeError("div must be a number")
