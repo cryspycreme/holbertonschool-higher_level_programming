@@ -17,19 +17,18 @@ def matrix_divided(matrix, div):
     
     if not isinstance(div, (float, int)):
         raise TypeError("div must be a number")
-    if div is 0:
+    if div == 0:
         raise ZeroDivisionError("division by zero")
     
-    row_length = len(matrix[0])
+    
     matrix_1 = []
     for row in matrix:
-            if len(row) != row_length:
-                raise TypeError("Each row of the matrix must have the same size")
+        row_length = len(matrix[0])
+        if len(row) != row_length:
+            raise TypeError("Each row of the matrix must have the same size")
     
-    new_row = []
-    for i in range(len(matrix)):
-        for j in range(len(matrix[i])):
-            num = matrix[i][j]
+        new_row = []
+        for num in row:
             if not isinstance(num, (int, float)):
                 raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
             divided = round((num / div), 2)
