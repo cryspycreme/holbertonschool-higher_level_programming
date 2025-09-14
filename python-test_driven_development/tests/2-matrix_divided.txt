@@ -48,3 +48,8 @@ Tests:
     Traceback (most recent call last):
     ...
     ZeroDivisionError: division by zero
+
+    Test 5 - row is empty
+    >>> matrix = [[3]]
+     >>> divide(matrix, 3)
+     [[1.0]]
