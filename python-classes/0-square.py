@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 
 """
-This is a function that creates an empty Class called Square 
+This is a function that creates an empty Class called Square
 """
+
 
 class Square:
     """
