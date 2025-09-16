@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 
 """
 This is a function that creates an empty Class called Rectangle
@@ -46,7 +45,7 @@ class Rectangle:
 
     def area(self):
         return self.height * self.width
-    
+
     def perimeter(self):
         if (self.height == 0) or (self.width == 0):
             return 0
