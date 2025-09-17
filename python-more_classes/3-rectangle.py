@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 
 """
-This is a function that creates an empty Class called Rectangle
+A function that creates a Class called Rectangle
 """
 
 
 class Rectangle:
     """
-    Initiate method to create new object/instance of class
+    A class that defines a rectangle with width and height
     """
     def __init__(self, width=0, height=0):
         self.width = width
