@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 """
-A function that creates a Class called Rectangle
+A function that creates a Class called Rectangle and prints
+a rectangle
 """
 
 
