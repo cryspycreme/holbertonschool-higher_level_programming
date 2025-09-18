@@ -1,0 +1,34 @@
+The ``say_my_name`` module
+=============================
+
+Using ``say_my_name``
+-------------------
+
+Import function from module from ``4-print_square.py``:
+>>> print_sqr = __import__('4-print_square').print_square
+
+Tests:
+    Test 1 - size is not an int
+    >>> print_sqr('hello')
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    Test 2 - size < 0
+    >>> print_sqr(-1)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0
+
+    Test 3 - size is a float and is less than 0
+    >>> print_sqr(-0.05)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+    Test 4 - no argument passed
+    >>> print_sqr()
+    Traceback (most recent call last):
+    ...
+    TypeError: print_square() missing 1 required positional argument:
+    'size'
