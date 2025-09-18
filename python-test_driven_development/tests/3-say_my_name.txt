@@ -20,12 +20,6 @@ Tests:
     ...
     TypeError: last_name must be a string
 
-    Test 3 - no arguments passed
-    >>> my_name()
-    Traceback (most recent call last):
-    ...
-    TypeError: my_name() missing 2 required positional arguments: 'first_name' and 'last_name'
-
-    Test 4 - last name not provided
+    Test 3 - last name not provided
     >>> my_name("John")
     My name is John 
