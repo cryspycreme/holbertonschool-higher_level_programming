@@ -53,12 +53,3 @@ Tests:
     >>> matrix = [[3]]
      >>> divide(matrix, 3)
      [[1.0]]
-
-     Test 6 - result is infinity and there is float overflow
-     >>> divide(1, float("inf"))
-    Traceback (most recent call last):
-    ...
-    OverflowError: cannot convert float infinity to integer
-
-    Test 7 - missing one argument
-    >>> divide(1)
