@@ -53,3 +53,10 @@ Tests:
     >>> matrix = [[3]]
      >>> divide(matrix, 3)
      [[1.0]]
+
+    Test 6 - result is infinity and there is float overflow
+    >>> matrix = [
+    ...    [1, 2, 3]
+    ...    ]
+    >>> divide(matrix, float("inf"))
+    [[0.0, 0.0, 0.0]]
