@@ -60,3 +60,15 @@ Tests:
     ...    ]
     >>> divide(matrix, float("inf"))
     [[0.0, 0.0, 0.0]]
+
+    Test 7 - missing one argument
+    >>> divide(2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+    Test 8 - missing both arguments
+    >>> divide()
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
