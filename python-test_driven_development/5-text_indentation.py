@@ -17,8 +17,11 @@ def text_indentation(text):
         if text[i] in spcl:
             print("{}".format(text[i]), end="")
             print("\n")
-        elif text[i] == " " and text[i - 1] in spcl:
-            print("", end="")
+            i += 1
+            # Skip *all* spaces after special char
+            while i < len(text) and text[i] == " ":
+                i += 1
+            continue
         else:
             print("{}".format(text[i]), end="")
         i += 1

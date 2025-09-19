@@ -15,7 +15,7 @@ Tests:
     TypeError: text must be a string
 
     Test 2 - positive test
-    >>> text = "Hello, world. I am: Crystal?"
+    >>> text = "Hello, world. I am:Crystal?"
     >>> indent(text)
     Hello, world.
     <BLANKLINE>
