@@ -45,3 +45,16 @@ Tests:
     >>> my_list = MyList()
     >>> isinstance(my_list, MyList)
     True
+
+    Test 8 - prints as __str__
+    >>> def __str__(self):
+    ...    return [self]
+
+    Test 9 - appends
+    >>> MyList = __import__('1-my_list').MyList
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(2)
+    >>> print(my_list)
+    [1, 2]
+
