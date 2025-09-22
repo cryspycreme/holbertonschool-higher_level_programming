@@ -1,0 +1,24 @@
+The ``print_sorted`` module
+=============================
+
+Using ``print_sorted``
+-------------------
+
+Import function from module 1-my_list.py:
+>>> print_sort = __import__('1-my_list').MyList.print_sorted
+
+Tests:
+    Test 1 - positive test
+    >>> my_list = [1, 8, 5, 3]
+    >>> print_sort(my_list)
+    [1, 3, 5, 8]
+
+    Test 2 - list contains negative number
+    >>> my_list = [1, -8, 5, 3]
+    >>> print_sort(my_list)
+    [-8, 1, 3, 5]
+
+    Test 3 - list contains a 0
+    >>> my_list = [1, -8, 0, 3]
+    >>> print_sort(my_list)
+    [-8, 0, 1, 3]
