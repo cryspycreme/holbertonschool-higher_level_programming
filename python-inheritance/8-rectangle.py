@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Integer Validator Module
+Base Geometry Module
 """
 
 
