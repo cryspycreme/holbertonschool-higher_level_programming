@@ -72,6 +72,6 @@ Tests:
     ...
     TypeError: age must be an integer
 
-    Test 1 - value is True
+    Test 11 - value is True
     >>> bg.integer_validator("age", True)
     
