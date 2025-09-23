@@ -2,7 +2,7 @@
 
 
 """
-Square 1 Module
+Square 2 Module
 """
 
 
@@ -21,10 +21,21 @@ class Square(Rectangle):
         # validate once with the ngith name
         super().integer_validator("size", size)
         # if we want to access the Rectangle attributes and set to size
-        self._Rectangle.__width = size
-        self._Rectangle.__height = size
+        self._Rectangle__width = size
+        self._Rectangle__height = size
         # super().__init__(size, size)
         self.__size = size
 
     def area(self):
+        """
+        returns area of the square
+        """
         return self.__size * self.__size
+
+    def __str__(self):
+        """
+        returns formatted string
+        """
+        # return ("{} {}/{}".format(self.__class__.__name__, self.
+        # _Rectangle__width, self._Rectangle__height))
+        return super().__str__()
