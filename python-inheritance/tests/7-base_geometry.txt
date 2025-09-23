@@ -75,3 +75,4 @@ Tests:
     Test 11 - value is True
     >>> bg.integer_validator("age", True)
     
+    
