@@ -24,7 +24,13 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
+    """
+    subclass Rectangle
+    """
     def __init__(self, width, height):
+        """
+        Method to instantiate Rectangle
+        """
         super().integer_validator("width", width)
         super().integer_validator("height", height)
         self.__width = width
