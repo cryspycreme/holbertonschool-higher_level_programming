@@ -4,24 +4,25 @@
 Base Geometry Module
 """
 
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-class BaseGeometry:
-    """
-    Raise error that area is not implemented
-    """
-    def area(self):
-        raise Exception("area() is not implemented")
-    """
-    Function to validate integers
-    """
-    def integer_validator(self, name, value):
-        if not isinstance(value, int):
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
-        if isinstance(name, type(value)):
-            return
 
+# class BaseGeometry:
+#     """
+#     Raise error that area is not implemented
+#     """
+#     def area(self):
+#         raise Exception("area() is not implemented")
+#     """
+#     Function to validate integers
+#     """
+#     def integer_validator(self, name, value):
+#         if not isinstance(value, int):
+#             raise TypeError("{} must be an integer".format(name))
+#         if value <= 0:
+#             raise ValueError("{} must be greater than 0".format(name))
+#         if isinstance(name, type(value)):
+#             return
 
 class Rectangle(BaseGeometry):
     """
