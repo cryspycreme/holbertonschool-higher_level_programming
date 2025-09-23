@@ -4,13 +4,15 @@ The ``integer_validator`` module
 Using ``integer_validator``
 -------------------
 
-Import function from module 7-base_geometry.py:
->>> int_validator = __import__('7-base_geometry').BaseGeometry.integer_validator
-
 Import class from module 7-base.geometry.py:
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
     >>> bg = BaseGeometry()
-    
+
+Import functions from module 7-base_geometry.py:
+>>> integer_validator = __import__('7-base_geometry').BaseGeometry.integer_validator
+>>> area = __import__('7-base_geometry').BaseGeometry.area
+
+
 Tests:
     Test 1 - value is not an integer
     >>> bg.integer_validator("my_int", "bob")
@@ -35,3 +37,13 @@ Tests:
     Traceback (most recent call last):
     ...
     TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+    Test 5 - area()
+    >>> bg.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+
+    Test 6 - positive test case
+    >>> bg.integer_validator("age", 1)
+    
