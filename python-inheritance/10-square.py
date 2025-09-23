@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 
-Rectangle = __import__('9-rectangle').Rectangle
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
-
 
 """
 Square 1 Module
 """
+
+
+Rectangle = __import__('9-rectangle').Rectangle
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Square(Rectangle):
@@ -14,6 +15,9 @@ class Square(Rectangle):
     subclass Square
     """
     def __init__(self, size):
+        """
+        Initialise with width and height from size
+        """
         super().__init__(size, size)
         self.__size = size
 
