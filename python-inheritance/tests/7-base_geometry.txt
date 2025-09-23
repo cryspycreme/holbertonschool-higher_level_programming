@@ -15,13 +15,13 @@ Import functions from module 7-base_geometry.py:
 
 Tests:
     Test 1 - value is not an integer
-    >>> bg.integer_validator("my_int", "bob")
+    >>> bg.integer_validator("age", "bob")
     Traceback (most recent call last):
     ...
-    TypeError: my_int must be an integer
+    TypeError: age must be an integer
 
     Test 2 - value is <= 0
-    >>> bg.integer_validator("age", -1)
+    >>> bg.integer_validator("age", 0)
     Traceback (most recent call last):
     ...
     ValueError: age must be greater than 0
@@ -46,4 +46,9 @@ Tests:
 
     Test 6 - positive test case
     >>> bg.integer_validator("age", 1)
-    
+
+    Test 7 - value is None
+    >>> bg.integer_validator("age", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
