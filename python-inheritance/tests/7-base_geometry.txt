@@ -52,3 +52,16 @@ Tests:
     Traceback (most recent call last):
     ...
     TypeError: age must be an integer
+
+    Test 8 - value is a tuple
+    >>> bg.integer_validator("age", (4,))
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    Test 9 - value ist a list
+    >>> bg.integer_validator("age", [3])
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
