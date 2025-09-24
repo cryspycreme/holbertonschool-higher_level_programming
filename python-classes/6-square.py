@@ -10,8 +10,8 @@ class Square:
     Prints and positions a square of size and position
     """
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size
-        self.position = position
+        self.__size = size  #triggers the size setter
+        self.position = position    #triggers the position setter
 
     @property
     def size(self):

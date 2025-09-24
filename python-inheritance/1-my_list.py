@@ -13,5 +13,5 @@ class MyList(list):
         """
         Function prints the list, but sorted (ascending sort)
         """
-        x = sorted(self)
+        x = sorted(self)ww
         print(x)
