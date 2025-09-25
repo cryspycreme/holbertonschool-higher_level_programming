@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 
-class CountedIterator(iter):
+class CountedIterator:
     def __init__(self, object):
-        iterator = super().iter(object)
-        self.iterator = iterator
+        self.object = iter(object)
         self.count = 0
 
     def get_count(self):
@@ -11,7 +10,8 @@ class CountedIterator(iter):
 
     def __next__(self):
         try:
+            next_obj = next(self.object)
             self.count += 1
-            return next(self.iterator)
-        except:
+            return next_obj
+        except StopIteration:
             raise StopIteration
