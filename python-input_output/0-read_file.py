@@ -4,6 +4,7 @@
 Read file module
 """
 
+
 def read_file(filename=""):
     """
     Function reads file and prints to output
