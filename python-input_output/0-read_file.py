@@ -10,6 +10,4 @@ def read_file(filename=""):
     """
     with open("my_file_0.txt", encoding="utf-8") as file:
         lines = file.readlines()
-        
-        for line in lines:
-            print("{}".format(line.rstrip()))
+        print("{}".format(lines.rstrip()))
