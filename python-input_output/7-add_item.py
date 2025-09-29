@@ -11,11 +11,15 @@ import json
 save_json = __import__('5-save_to_json_file').save_to_json_file
 from_json = __import__('6-load_from_json_file').load_from_json_file
 
-if len(sys.argv) == 1:
+# if len(sys.argv) == 1:
+#     args = []
+#     save_json(args, "add_item.json")
+
+try:
+    args = from_json("add_item.json")
+except Exception:
     args = []
     save_json(args, "add_item.json")
-
-args = from_json("add_item.json")
 
 if len(sys.argv) > 1:
     for arg in sys.argv[1:]:
