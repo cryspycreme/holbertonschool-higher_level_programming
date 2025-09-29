@@ -8,6 +8,6 @@ def read_file(filename=""):
     """
     Function reads file and prints to output
     """
-    with open("my_file_0.txt", encoding="utf-8") as file:
+    with open(filename, encoding="utf-8") as file:
         for lines in file:
             print("{}".format(lines.rstrip()))
