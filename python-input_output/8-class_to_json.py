@@ -5,7 +5,7 @@ Class to JSON Module
 """
 
 
-import json
+# import json
 
 
 def class_to_json(obj):
@@ -13,4 +13,5 @@ def class_to_json(obj):
     Function returns dictionary description for JSON object
     """
     dict = obj.__dict__
-    return json.dumps(dict)
+    return dict
+    # return json.dumps(dict)
