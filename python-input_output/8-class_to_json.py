@@ -5,9 +5,6 @@ Class to JSON Module
 """
 
 
-# import json
-
-
 def class_to_json(obj):
     """
     Function returns dictionary description for JSON object
