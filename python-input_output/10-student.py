@@ -23,6 +23,7 @@ class Student:
             result = {x: class_dict[x] for x in attrs if x in class_dict}
         else:
             result = class_dict
-        
-        sorted_result = dict(sorted(result.items(), key=lambda item: str(item[1])))
+
+        sorted_result = dict(sorted(result.items(), key=lambda item: str
+                                    (item[1])))
         return sorted_result
