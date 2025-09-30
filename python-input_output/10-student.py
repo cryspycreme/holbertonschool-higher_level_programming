@@ -20,8 +20,9 @@ class Student:
         """
         class_dict = self.__dict__
         if isinstance(attrs, list) and all(isinstance(x, str) for x in attrs):
-            for x in attrs:
-                if x in class_dict:
-                    return {x: class_dict[x]}
+            result = {x: class_dict[x] for x in attrs if x in class_dict}
         else:
-            return class_dict
+            result = class_dict
+        
+        sorted_result = dict(sorted(result.items(), key=lambda item: str(item[1])))
+        return sorted_result
