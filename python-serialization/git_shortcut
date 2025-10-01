@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+    echo "⚠️  Please run this script with: source $0"
+    exit 1
+fi
+
+echo "Setting aliases..."
+export PS1='\W \$ '
+alias ga="git add"
+alias gs="git status"
+alias gc="git commit"
+alias gp="git push"
+alias gpf="git push -f"

@@ -24,6 +24,7 @@ class CustomObject:
         for key, value in cobj_dict.items():
             new_key = key.replace("_", " ")
             new_key = new_key.title()
+            # key.replace("_", " ").title() <- you can stack methods like this
             print("{}: {}".format(new_key, value))
 
     def serialize(self, filename):
