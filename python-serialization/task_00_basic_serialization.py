@@ -19,5 +19,5 @@ def load_and_deserialize(filename):
     """
     Function deserializes a JSON File to Python dict
     """
-    with open(filename, encoding="utf-8"):
-        json.load(filename)
+    with open(filename, encoding="utf-8") as dsrl:
+        json.load(dsrl)
