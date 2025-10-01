@@ -42,4 +42,4 @@ class CustomObject:
             try:
                 return pickle.load(dsrlz)
             except EOFError:
-                raise EOFError("Ran out of input")
+                exit
