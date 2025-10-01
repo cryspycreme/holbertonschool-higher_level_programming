@@ -39,4 +39,7 @@ class CustomObject:
         Function deserializes object
         """
         with open(filename, "rb") as dsrlz:
-            return pickle.load(dsrlz)
+            try:
+                return pickle.load(dsrlz)
+            except EOFError:
+                raise EOFError("Ran out of input")
