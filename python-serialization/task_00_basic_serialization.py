@@ -12,7 +12,7 @@ def serialize_and_save_to_file(data, filename):
     Function serializes a Python dict to JSON file
     """
     with open(filename, "w", encoding="utf-8") as srl:
-        json.dump(data, srl)
+        return json.dump(data, srl)
 
 
 def load_and_deserialize(filename):
@@ -20,4 +20,4 @@ def load_and_deserialize(filename):
     Function deserializes a JSON File to Python dict
     """
     with open(filename, encoding="utf-8") as dsrl:
-        json.load(dsrl)
+        return json.load(dsrl)
