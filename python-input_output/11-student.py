@@ -33,15 +33,11 @@ class Student:
         Function takes a dict and updates the objects attr with
         new vaues from the dict
         """
-        # update Class attribute to the new value in the json dict
-        # loop through the key-value pairs in the dict,
-        # if dict key == class attribute, access class attribute using
-        # class.attribute and update it to the value using json.value
-        # with open(json, encoding="utf-8") as j:
-        for key, value in json.items():
-            if key == "first_name":
-                self.first_name = value
-            if key == "last_name":
-                self.last_name = value
-            if key == "age":
-                self.age = value
+        # for key, value in json.items():
+        #     if key == "first_name":
+        #         self.first_name = value
+        #     if key == "last_name":
+        #         self.last_name = value
+        #     if key == "age":
+        #         self.age = value
+        self.__dict__.update(json)
