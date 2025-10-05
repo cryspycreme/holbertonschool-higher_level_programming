@@ -11,14 +11,16 @@ def pascal_triangle(n):
     """
     res = [[1]]
 
-    for i in range(n - 1): #-1 because we already made one row is res
-        temp = [0] + res[-1] + [0]
-        row = []
-        for j in range(len(res[-1]) + 1):
-            row.append(temp[j] + temp[j + 1])
-        res.append(row)
-    return res
-
+    if n > 0:
+        for i in range(n - 1): #-1 because we already made one row is res
+            temp = [0] + res[-1] + [0] #creating a temp row with 0 at front and end
+            row = []
+            for j in range(len(res[-1]) + 1):
+                row.append(temp[j] + temp[j + 1])
+            res.append(row)
+        return res
+    else:
+        return
 
 # if n <= 0, return an empty list
 # n is always an int
