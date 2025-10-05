@@ -12,8 +12,10 @@ def pascal_triangle(n):
     res = [[1]]
 
     if n > 0:
-        for i in range(n - 1): #-1 because we already made one row is res
-            temp = [0] + res[-1] + [0] #creating a temp row with 0 at front and end
+        # -1 because we already made one row is res
+        for i in range(n - 1):
+            # create a temp row with 0 at start & end
+            temp = [0] + res[-1] + [0]
             row = []
             for j in range(len(res[-1]) + 1):
                 row.append(temp[j] + temp[j + 1])
@@ -26,12 +28,13 @@ def pascal_triangle(n):
 # n is always an int
 # each subsequent row is double the sum of the prev row
 
-# in pascal's triangle, each number is the sum of the two numbers directly above it as shown
-# assume there is a 0 at the beginning and end of each row, and use pointers to shift and build the row
+# in pascal's triangle, each number is the sum of the two numbers directly
+# above it as shown
+# assume there is a 0 at the beginning and end of each row, and use
+# pointers to shift and build the row
 
 # [1]  1, row 0
 # [1,1]. 2, row 1
 # [1,2,1]. 4, row 2
 # [1,3,3,1]. 8, row 3
 # [1,4,6,4,1]. 16, row 4
-
