@@ -25,12 +25,11 @@ def fetch_and_save_posts():
     if response.status_code == 200:
         # convert json to list of dicts
         posts = response.json()
-        
         #define csv column keys
-        fieldnames = ['userId', 'id', 'title', 'body']
+        fieldnames = ['id', 'title', 'body']
         
         # write data into a csv file
-        with open("posts.csv", mode="w", encoding="utf-8") as csvfile:
-             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        with open("posts.csv", mode="w", newline="", encoding="utf-8") as csvfile:
+             writer = csv.DictWriter(csvfile, fieldnames=fieldnames, extrasaction='ignore')
              writer.writeheader() # write column names
              writer.writerows(posts) #writes all posts at once as rows
