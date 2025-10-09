@@ -34,11 +34,12 @@ class Handler(BaseHTTPRequestHandler):
                 message = "OK"
                 self.wfile.write(message.encode("utf-8"))
             else:
+                 # handle 404 - endpoint not found
                  self.send_response(404)
                  self.send_header("Content-type", "text/plain")
                  self.end_headers()
                  message = "Endpoint not found"
-                 self.wfile.write(message)
+                 self.wfile.write(message.encode("utf-8"))
     
 def run_server():
     HOST = "localhost"
