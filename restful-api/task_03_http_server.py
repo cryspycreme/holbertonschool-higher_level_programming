@@ -22,7 +22,7 @@ class Handler(BaseHTTPRequestHandler):
                 self.wfile.write(json_person)
         # if user visits /status end point:
             elif self.path == "/status":
-                status = {"status": "OK"}
+                status = "OK"
                 json_status = json.dumps(status).encode("utf-8")
                 self.send_response(200)
                 self.send_header("Content-type", "application/json")
