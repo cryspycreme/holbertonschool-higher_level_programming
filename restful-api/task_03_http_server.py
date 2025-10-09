@@ -39,7 +39,7 @@ class Handler(BaseHTTPRequestHandler):
                  self.send_response(404)
                  self.send_header("Content-type", "text/html")
                  self.end_headers()
-                 self.wfile.write("Error 404: Not Found".encode("utf-8"))
+                 self.wfile.write(json_error.encode("utf-8"))
             
 server = HTTPServer((HOST, PORT), Handler)
 server.serve_forever()
