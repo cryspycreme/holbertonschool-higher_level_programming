@@ -10,9 +10,15 @@ PORT = 8000
 class Handler(BaseHTTPRequestHandler):
     # define custom method to handle how we respond to GET requests
     def do_GET(self):
-        # if user visits /data end point, return JSON:
-            if self.path == "/data":
-                # create Python dict data set (OK)
+            # if user visits root (/) endpoint (OK)
+            if self.path == "/":
+                self.send_response(200)
+                self.send_header("Content-type", "text/html")
+                self.end_headers()
+                self.wfile.write("Hello, this is a simple API!".encode("utf-8"))
+            # if user visits /data end point, return JSON (ok)
+            elif self.path == "/data":
+                # create Python dict data set
                 person = {"name": "John", "age": 30, "city": "New York"}
                 # serialize data to json string
                 json_person = json.dumps(person).encode("utf-8")
@@ -20,26 +26,19 @@ class Handler(BaseHTTPRequestHandler):
                 self.send_header("Content-type", "application/json")
                 self.end_headers()
                 self.wfile.write(json_person)
-        # if user visits /status end point:
+            # if user visits /status end point:
             elif self.path == "/status":
-                status = {"status": "OK"}
-                json_status = json.dumps(status).encode("utf-8")
                 self.send_response(200)
-                self.send_header("Content-type", "application/json")
+                self.send_header("Content-type", "text/plain")
                 self.end_headers()
-                self.wfile.write(json_status)
-        # user visits root (/) endpoint (OK)
-            elif self.path == "/":
-                self.send_response(200)
-                self.send_header("Content-type", "text/html")
-                self.end_headers()
-                self.wfile.write("Hello, this is a simple API!".encode("utf-8"))
+                message = "OK"
+                self.wfile.write(message.encode("utf-8"))
             else:
-                 json_error = json.dumps({"error": "Endpoint not found"}).encode("utf-8")
                  self.send_response(404)
-                 self.send_header("Content-type", "application/json")
+                 self.send_header("Content-type", "text/plain")
                  self.end_headers()
-                 self.wfile.write(json_error)
+                 message = "Endpoint not found"
+                 self.wfile.write(message)
             
 server = HTTPServer((HOST, PORT), Handler)
 server.serve_forever()
