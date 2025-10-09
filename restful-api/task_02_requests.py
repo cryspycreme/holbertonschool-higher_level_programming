@@ -25,6 +25,7 @@ def fetch_and_save_posts():
     if response.status_code == 200:
         # convert json to list of dicts
         posts = response.json()
+        print(posts)
         #define csv column keys
         fieldnames = ['id', 'title', 'body']
         
