@@ -1,10 +1,10 @@
 #!/usr/bin/python3
+"""
+Developing a simple API using Python
+"""
 
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import json
-
-HOST = "localhost"
-PORT = 8000
 
 # define subclass that extends from BaseHTTPRequestHandler
 class Handler(BaseHTTPRequestHandler):
@@ -39,6 +39,18 @@ class Handler(BaseHTTPRequestHandler):
                  self.end_headers()
                  message = "Endpoint not found"
                  self.wfile.write(message)
-            
-server = HTTPServer((HOST, PORT), Handler)
-server.serve_forever()
+    
+def run_server():
+    HOST = "localhost"
+    PORT = 8000
+    server_address = (HOST, PORT)
+    server = HTTPServer(server_address, Handler)
+
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print("\nServer stopped.")
+        server.server_close()
+
+if __name__ == '__main__':
+    run_server()
