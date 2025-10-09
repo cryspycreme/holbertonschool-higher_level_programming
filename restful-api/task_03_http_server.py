@@ -22,7 +22,7 @@ class Handler(BaseHTTPRequestHandler):
                 self.wfile.write(json_person)
         # if user visits /status end point:
             elif self.path == "/status":
-                status = "OK"
+                status = {"status": "OK"}
                 json_status = json.dumps(status).encode("utf-8")
                 self.send_response(200)
                 self.send_header("Content-type", "application/json")
@@ -35,9 +35,9 @@ class Handler(BaseHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write("Hello, this is a simple API!".encode("utf-8"))
             else:
-                 json_error = json.dumps("Endpoint not found").encode("utf-8")
+                 json_error = json.dumps({"error": "Endpoint not found"}).encode("utf-8")
                  self.send_response(404)
-                 self.send_header("Content-type", "text/html")
+                 self.send_header("Content-type", "application/json")
                  self.end_headers()
                  self.wfile.write(json_error)
             
