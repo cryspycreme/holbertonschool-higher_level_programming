@@ -35,7 +35,7 @@ class Handler(BaseHTTPRequestHandler):
                 self.end_headers()
                 self.wfile.write("Hello, this is a simple API!".encode("utf-8"))
             else:
-                 json_error = json.dumps("Error 404: Not Found").encode("utf-8")
+                 json_error = json.dumps("Endpoint not found").encode("utf-8")
                  self.send_response(404)
                  self.send_header("Content-type", "text/html")
                  self.end_headers()
