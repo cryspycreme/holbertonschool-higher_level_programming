@@ -1,7 +1,6 @@
 --
-ALTER TABLE second_table
-ADD COLUMN number COUNT(score);
-
-SELECT score, number
+SELECT score, COUNT(score) AS number
+FROM second_table
+GROUP BY score
 ORDER BY number DESC;
 
