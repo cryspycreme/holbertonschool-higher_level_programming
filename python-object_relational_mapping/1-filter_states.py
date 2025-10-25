@@ -24,5 +24,5 @@ def get_states_starting_with_N(username, password, dbname):
 		print(f'Database error: {e}')
 
 
-if name == "__main__":
+if __name__ == "__main__":
 	get_states_starting_with_N(sys.argv[1], sys.argv[2], sys.argv[3])
