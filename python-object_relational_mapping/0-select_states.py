@@ -5,6 +5,7 @@ Script that returns states from the states table
 import MySQLdb
 import sys
 
+
 def get_all_states(username, password, dbname):
     """ List all states in the DB """
     try:
@@ -23,6 +24,6 @@ def get_all_states(username, password, dbname):
     except MySQLdb.Error as err:
         print(f"Database error: {err}")
 
+
 if __name__ == "__main__":
     get_all_states(sys.argv[1], sys.argv[2], sys.argv[3])
-
