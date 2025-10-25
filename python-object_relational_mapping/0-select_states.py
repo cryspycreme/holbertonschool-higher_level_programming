@@ -15,11 +15,10 @@ def get_all_states(username, password, dbname):
 		    user=username,
 		    passwd=password,
 		    db=dbname) as db:
-
         with db.cursor() as cursor:
-			cursor.execute("SELECT * FROM states ORDER BY id ASC")
-			for row in cursor.fetchall():
-				print(row) 
+            cursor.execute("SELECT * FROM states ORDER BY id ASC")
+            for row in cursor.fetchall():
+                print(row) 
 	except MySQLdb.Error as err:
         print(f"Database error: {err}")
 	
