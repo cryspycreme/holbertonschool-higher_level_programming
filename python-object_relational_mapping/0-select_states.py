@@ -2,11 +2,9 @@
 """
 Script that returns states from the states table
 """
-
 import MySQLdb
 import sys
 
-""" 0-select_states.py """
 def get_all_states(username, password, dbname):
 	""" List all states in the DB """
 	try: 
@@ -16,9 +14,9 @@ def get_all_states(username, password, dbname):
 		    port=3306,
 		    user=username,
 		    passwd=password,
-		    db=dbname
-		) as db:
-			with db.cursor() as cursor:
+		    db=dbname) as db:
+
+            with db.cursor() as cursor:
 				cursor.execute("SELECT * FROM states ORDER BY id ASC")
 				for row in cursor.fetchall():
 					print(row) 
