@@ -23,7 +23,7 @@ def get_all_states(username, password, dbname):
 				for row in cursor.fetchall():
 					print(row) 
 	except MySQLdb.Error as err:
-		print(f"Database error: {err}")
+        print(f"Database error: {err}")
 	
 if __name__ == "__main__":
     get_all_states(sys.argv[1], sys.argv[2], sys.argv[3])
