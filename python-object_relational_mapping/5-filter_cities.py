@@ -21,14 +21,14 @@ def list_cities_by_state(username, password, dbname, state_name):
                 db=dbname
                 )
         cursor = db.cursor()
-        query = """"
+        query = """
         SELECT cities.name
         FROM cities
         JOIN states ON cities.state_id = states.id
         WHERE BINARY states.name = %s
         ORDER BY cities.id ASC
         """
-        cursor.execute(query, (state_name))
+        cursor.execute(query, (state_name,))
         results = cursor.fetchall()
         for cities in results:
             print(cities)
