@@ -10,25 +10,24 @@ import sys
 
 Base = declarative_base()
 
-if __name__ == "__main__":
-    # CLI arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    dbname = sys.argv[3]
-
-    # create connection between sqlalchemy to mysql server
+def get_state(username, password, database_name):
+    """ Get all states"""
+    # create connection between sqlalchemy to database
     engine = create_engine(
-            f'mysql+mysqldb://{username}:{password}@localhost:3306/{dbname}',
-            pool_pre_ping=True)
+            f'mysql+mysqldb://{username}:{password}@localhost:3306/{dbname}')
 
-    # bind engine to a session
+    # bind engine to the session class and create a session instance
     Session = sessionmaker(bind=engine)
     session = Session()
 
     # query all states sorted by id
-    states = session.query(State).orderby(State.id).all()
-    for state in states:
-        print(f'{state.id}: {state.name}')
+    try:
+        states = session.query(State).order_by(State.id).all()
+        for state in states:
+            print(f'{state.id}: {state.name}')
+    finally:
+        # close session
+        session.close()
 
-    # close session
-    session.close()
+if __name__ == "__main__"":
+    get_state(sys.argv[1], sys.argv[2], sys.argv[3])
