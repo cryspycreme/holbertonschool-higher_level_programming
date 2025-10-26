@@ -30,8 +30,7 @@ def list_cities_by_state(username, password, dbname, state_name):
         """
         cursor.execute(query, (state_name,))
         results = cursor.fetchall()
-        for cities in results:
-            print(cities)
+        print(", ".join(city[0] for city in results))
     except MySQLdb.Error as e:
         print(f'Database error: {e}')
     finally:
