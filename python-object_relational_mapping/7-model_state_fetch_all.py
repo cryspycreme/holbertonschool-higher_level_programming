@@ -8,6 +8,7 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 from model_state import Base, State
 import sys
 
+
 def get_state(username, password, dbname):
     """ Get all states"""
     # create connection between sqlalchemy to database
@@ -26,6 +27,7 @@ def get_state(username, password, dbname):
     finally:
         # close session
         session.close()
+
 
 if __name__ == "__main__":
     get_state(sys.argv[1], sys.argv[2], sys.argv[3])
