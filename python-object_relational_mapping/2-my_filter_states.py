@@ -7,6 +7,10 @@ Script that lists all states that match the argument
 
 
 def state_name_matches_arg(username, password, dbname, state_name_searched):
+    """
+    Connect to MySQLdb and display all
+    state names that input argument
+    """
     try:
         with MySQLdb.connect(
                 host='localhost',
