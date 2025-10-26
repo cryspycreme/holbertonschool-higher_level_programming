@@ -26,7 +26,7 @@ def get_matched_state_id(username, password, dbname, state_name):
         else:
             states = (
                     session.query(State)
-                    .filter_by(State.name=state_name)
+                    .filter(State.name == state_name)
                     .all()
                     )
             print(f'{state.id}')
