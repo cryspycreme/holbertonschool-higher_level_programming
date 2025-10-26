@@ -21,7 +21,7 @@ def state_name_matches_arg(username, password, dbname, state_name_searched):
                 ) as db:
             with db.cursor() as cursor:
                 query = (
-                        "SELECT * FROM states"
+                        "SELECT * FROM states "
                         "WHERE BINARY name = '{}' ORDER BY states.id ASC"
                         .format(state_name_searched))
                 cursor.execute(query)
