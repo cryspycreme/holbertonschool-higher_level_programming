@@ -27,11 +27,8 @@ def delete_states_with_a(username, password, dbname):
                 .filter(State.name.like('%a%'))
                 .all()
                 )
-
-        if states is not None:
-            # mark for deletion
             for state in states:
-                session.delete(states)
+                session.delete(state)
             # persist deletion
             session.commit()
     finally:
