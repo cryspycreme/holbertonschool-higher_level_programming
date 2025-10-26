@@ -32,4 +32,4 @@ def state_name_matches_arg(username, password, dbname, state_name_searched):
 
 
 if __name__ == "__main__":
-    state_name_matches_arg(sys.argv[1], sys.argv[2], sys.argv[3], sus.argv[4])
+    state_name_matches_arg(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
