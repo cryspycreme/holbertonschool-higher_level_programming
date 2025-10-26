@@ -21,7 +21,7 @@ def add_state(username, password, dbname):
 
     # query
     try:
-        state = session.query(State).filter(State.id == 2).first
+        state = session.query(State).filter(State.id == 2).first()
         if state is not None:
             state.name = 'New Mexico'
             session.commit()
