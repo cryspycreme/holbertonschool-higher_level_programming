@@ -8,6 +8,9 @@ import sys
 
 
 def safe_filter_states(username, password, dbname, state_name_searched):
+    """
+    Safely filter states using placeholders
+    """
     try:
         with MySQLdb.connect(
             host='localhost',
