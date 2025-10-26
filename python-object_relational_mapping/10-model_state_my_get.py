@@ -24,12 +24,12 @@ def get_matched_state_id(username, password, dbname, state_name):
         states = (
                 session.query(State)
                 .filter(State.name == state_name)
-                .all()
+                .first()
                 )
         if states is None:
             print("Not found")
         else:
-            print(f'{state.id}')
+            print(states.id)
     finally:
         # close session
         session.close()
