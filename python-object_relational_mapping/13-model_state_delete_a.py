@@ -27,10 +27,10 @@ def delete_states_with_a(username, password, dbname):
                 .filter(State.name.like('%a%'))
                 .all()
                 )
-            for state in states:
-                session.delete(state)
-            # persist deletion
-            session.commit()
+        for state in states:
+            session.delete(state)
+        # persist deletion
+        session.commit()
     finally:
         # close session
         session.close()
