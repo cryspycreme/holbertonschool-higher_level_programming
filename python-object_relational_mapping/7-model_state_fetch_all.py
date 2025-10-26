@@ -8,9 +8,7 @@ from sqlalchemy.orm import declarative_base, sessionmaker
 from model_state import Base, State
 import sys
 
-Base = declarative_base()
-
-def get_state(username, password, database_name):
+def get_state(username, password, dbname):
     """ Get all states"""
     # create connection between sqlalchemy to database
     engine = create_engine(
