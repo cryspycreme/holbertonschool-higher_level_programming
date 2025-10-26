@@ -19,12 +19,16 @@ def get_matched_state_id(username, password, dbname, state_name):
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # query 
+    # query
     try:
         if state_name is None:
             print("Not found")
         else:
-            states = session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
+            states = (
+                    session.query(State)
+                    .filter_by(State.name=state_name)
+                    .all()
+                    )
             print(f'{state.id}')
     finally:
         # close session
