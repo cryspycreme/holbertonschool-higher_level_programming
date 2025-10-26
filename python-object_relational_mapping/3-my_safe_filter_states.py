@@ -16,7 +16,7 @@ def safe_filter_states(username, password, dbname, state_name_searched):
             host='localhost',
             port=3306,
             user=username,
-            passwd=password
+            passwd=password,
             db=dbname
         ) as db:
             with db.cursor() as cursor:
