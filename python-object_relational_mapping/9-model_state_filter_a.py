@@ -21,9 +21,14 @@ def get_state_with_a(username, password, dbname):
 
     # query
     try:
-        states = session.query(State).filter(State.name.like('%a%'))
-        .order_by(State.id).all()
-        print(f'{state.id}: {state.name}')
+        states = (
+                session.query(State)
+                .filter(State.name.like('%a%'))
+                .order_by(State.id)
+                .all()
+                )
+        for state in states:
+            print(f'{state.id}: {state.name}')
     finally:
         # close session
         session.close()
