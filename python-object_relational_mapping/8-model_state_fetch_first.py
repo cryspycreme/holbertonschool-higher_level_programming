@@ -9,7 +9,7 @@ from model_state import Base, State
 import sys
 
 
-def get__first_state(username, password, dbname):
+def get_first_state(username, password, dbname):
     """ Get first state"""
     # create connection between sqlalchemy to database
     engine = create_engine(
@@ -22,7 +22,7 @@ def get__first_state(username, password, dbname):
     # query all states sorted by id
     try:
         state = session.query(State).order_by(State.id).first()
-        if State is None:
+        if state is None:
             print("Nothing")
         else:
             print(f'{state.id}: {state.name}')
@@ -32,4 +32,4 @@ def get__first_state(username, password, dbname):
 
 
 if __name__ == "__main__":
-    get_state(sys.argv[1], sys.argv[2], sys.argv[3])
+    get_first_state(sys.argv[1], sys.argv[2], sys.argv[3])
