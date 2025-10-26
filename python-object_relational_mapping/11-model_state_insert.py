@@ -25,10 +25,9 @@ def add_state(username, password, dbname):
         new_state = State(name="Louisiana")
         # add the object to the session
         session.add(new_state)
-        # commit the session
+        # commit the session to the database
         session.commit()
-        states = session.query(State).all()
-        print(f'{states.id}: {states.name}')
+        print(new_state.id)
     finally:
         # close session
         session.close()
