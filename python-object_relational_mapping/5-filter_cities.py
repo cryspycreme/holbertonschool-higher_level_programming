@@ -28,7 +28,7 @@ def list_cities_by_state(username, password, dbname, state_name):
         WHERE BINARY states.name = %s
         ORDER BY cities.id ASC
         """
-        cursor.execute((query), state_name)
+        cursor.execute(query, (state_name))
         results = cursor.fetchall()
         for cities in results:
             print(cities)
