@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-import MySQLdb
-import sys
 """
 Script that lists all states that match the argument
 """
+import MySQLdb
+import sys
 
 
 def state_name_matches_arg(username, password, dbname, state_name_searched):
