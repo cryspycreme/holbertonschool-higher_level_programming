@@ -29,7 +29,7 @@ def fetch_city_by_state(username, password, dbname):
                 .order_by(City.id)
                 .all()
                 )
-        for city, state in results:
+        for state, city in results:
             print(f"{state.name}: ({city.id}) {city.name}")
     finally:
         # close session
