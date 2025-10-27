@@ -11,7 +11,7 @@ import sys
 
 
 def fetch_city_by_state(username, password, dbname):
-    """ Get states that contain the letter a """
+    """ Fetch city by state """
     # create connection between sqlalchemy to database
     engine = create_engine(
             f'mysql+mysqldb://{username}:{password}@localhost:3306/{dbname}')
