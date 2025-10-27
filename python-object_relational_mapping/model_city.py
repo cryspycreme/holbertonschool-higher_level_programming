@@ -4,7 +4,7 @@ Module 14 - Cities in State
 """
 
 from sqlalchemy import Column, Integer, String, create_engine, ForeignKey
-from sqlalchemy.orm import declarative_base, sessionmaker
+from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 from model_state import Base, State
 
 
