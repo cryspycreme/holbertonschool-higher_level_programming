@@ -27,3 +27,7 @@ def get_states(username, password, dbname):
 
     except MySQLdb.Error as e:
         print(f"MySQL Error: {e}")
+
+
+if __name__ == "__main__":
+    get_states(sys.argv[1], sys.argv[2], sys.argv[3])
