@@ -21,7 +21,6 @@ def generate_invitations(template, attendees):
     
     index = 0
     template_copy = template
-    # create a new dict with "N/A" for missing or None values
     for attendee in attendees:
         template = template_copy
         for key, value in attendee.items():
