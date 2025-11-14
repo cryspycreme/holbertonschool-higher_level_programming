@@ -38,15 +38,15 @@ def products():
          with open('products.csv') as f:
               data = list(csv.DictReader(f))
     else:
-         return render_template('product_display.html', products='Wrong source')
+        return render_template('product_display.html', error='Wrong source')
 
     if id is not None:
         # check if there is a match between ID in data and requested ID
         for product in data:
-             if int(data['id'])==int(id):
+             if int(product['id'])==int(id):
                   return render_template('product_display.html', products=[product])
         # no product found
-        return render_template('product_display.html', products='Product not found')
+        return render_template('product_display.html', error='Product not found')
     else:
          return render_template('product_display.html', products=data)
          

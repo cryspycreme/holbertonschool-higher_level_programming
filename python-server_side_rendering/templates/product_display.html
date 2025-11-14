@@ -5,6 +5,9 @@
    </head>
    <body>
         {% include 'header.html'%}
+        {% if error %}
+            <p> {{ error }}</p>
+        {% endif %}
         <table>
             <thead>
                 <tr>
