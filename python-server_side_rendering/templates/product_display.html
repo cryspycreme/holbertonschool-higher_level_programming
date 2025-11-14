@@ -1,0 +1,30 @@
+ <!doctype html>
+   <html lang="en">
+   <head>
+       <title>Products Table Template</title>
+   </head>
+   <body>
+        {% include 'header.html'%}
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products%}
+                <tr>
+                    <td>{{ product.id }}</td>
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.category }}</td>
+                    <td>{{ product.price }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% include 'footer.html'%}
+   </body>
+   </html>
