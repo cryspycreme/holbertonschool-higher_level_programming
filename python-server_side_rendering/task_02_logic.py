@@ -18,8 +18,8 @@ def contact():
 @app.route('/items')
 def items():
         with open('items.json') as f:
-            data = json.load(f)
-            items = data.get("items")
+            data = json.load(f) # read the contents of file and parse from JSON into dict -> returns the enritre JSON object
+            items = data.get("items") # gets the value of the items key
         return render_template('items.html', items=items)
 
 if __name__ == '__main__':
