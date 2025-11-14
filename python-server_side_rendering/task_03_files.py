@@ -43,7 +43,7 @@ def products():
     if id is not None:
         # check if there is a match between ID in data and requested ID
         for product in data:
-             if data['id']==id:
+             if int(data['id'])==int(id):
                   return render_template('product_display.html', products=[product])
         # no product found
         return render_template('product_display.html', products='Product not found')
