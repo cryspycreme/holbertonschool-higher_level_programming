@@ -36,7 +36,7 @@ def products():
     elif source == 'csv':
          # parse csv data
          with open('products.csv') as f:
-              data = csv.DictReader(f)
+              data = list(csv.DictReader(f))
     else:
          return render_template('product_display.html', products='Wrong source')
 
