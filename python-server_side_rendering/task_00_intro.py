@@ -20,15 +20,17 @@ def generate_invitations(template, attendees):
         return
     
     index = 0
+    required_fields = ["name", "event_title", "event_date", "event_location"]
     template_copy = template
     for attendee in attendees:
         template = template_copy
-        for key, value in attendee.items():
-            if key or value is None:
+        for field in required_fields:
+            value = attendee.get(field, None)
+            if value is None:
                 value = "N/A"
-                template = template.replace('{' + key + '}', value)
+                template = template.replace('{' + field + '}', value)
             else:
-                template= template.replace('{' + key + '}', value)
+                template= template.replace('{' + field + '}', value)
 
         # write to file
         index = index + 1
